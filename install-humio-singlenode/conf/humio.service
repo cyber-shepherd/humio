@@ -1,0 +1,16 @@
+[Unit]
+Description=LogScale service
+After=network.service
+
+[Service]
+Type=notify
+Restart=on-abnormal
+User=humio
+Group=humio
+LimitNOFILE=250000:250000
+EnvironmentFile=/etc/humio/server.conf
+WorkingDirectory=/var/humio
+ExecStart=/opt/humio/humio/bin/humio-server-start.sh
+
+[Install]
+WantedBy=default.target
