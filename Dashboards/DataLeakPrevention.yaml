@@ -1,0 +1,75 @@
+name: Data Leak Prevention
+description: Summary of DLP events over time, actions taken, policies triggered, senders
+timeSelector: {}
+sharedTimeInterval:
+  enabled: false
+  isLive: false
+  start: 1d
+widgets:
+  a0eecc0c-cac1-4548-9241-3560fbee0f3e:
+    x: 0
+    y: 8
+    height: 4
+    queryString: cef.ext.fname = *.zip or cef.ext.fname = *.tar* or cef.ext.fname
+      = *.txt | groupBy(field=cef.ext.fname, function=count()) | sort()
+    visualization: table-view
+    end: now
+    start: 1y
+    width: 4
+    title: Attachments
+    isLive: false
+    type: query
+  0ad7d80d-6010-40dc-861e-ff7cc4dba583:
+    x: 4
+    y: 4
+    height: 4
+    queryString: '#source=dlp-logs | groupby(field=policy, function=count()) | sort()'
+    visualization: table-view
+    end: now
+    start: 1y
+    width: 4
+    title: Policies
+    isLive: false
+    type: query
+  b1747cbf-a62a-4ef2-869d-becc8e03dd60:
+    x: 0
+    y: 4
+    height: 4
+    queryString: cef.ext.act = * | groupby(field=cef.ext.act)
+    visualization: table-view
+    end: now
+    start: 1y
+    width: 4
+    title: Actions
+    isLive: false
+    type: query
+  ff1b6383-bf9f-40b7-96cc-a88a5c8bb42d:
+    x: 0
+    y: 0
+    height: 4
+    queryString: cef.ext.act = * | timechart(span=12hours, function=count())
+    end: now
+    start: 90d
+    width: 12
+    options:
+      connect-points: false
+      imputation: none
+      plotType: line
+    visualization: time-chart
+    title: Events
+    isLive: false
+    type: query
+  42de8114-2e4c-4217-83af-0578be632f9d:
+    x: 8
+    y: 4
+    height: 4
+    queryString: '#source=dlp-logs | groupby(field=senderAddress, function=count())
+      | sort()'
+    visualization: table-view
+    end: now
+    start: 1y
+    width: 4
+    title: Senders
+    isLive: false
+    type: query
+$schema: https://schemas.humio.com/dashboard/v0.12.0
