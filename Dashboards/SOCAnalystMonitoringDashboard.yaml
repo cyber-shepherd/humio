@@ -1,0 +1,146 @@
+name: SOC Analyst Monitoring Dashboard
+description: Summary of network events over time, actions taken, policies triggered,
+  senders
+timeSelector:
+  defaultTimeJumpInMs: 30000
+sharedTimeInterval:
+  enabled: false
+  isLive: false
+  start: 1d
+widgets:
+  ddeb9544-0d9c-4b36-b78b-4807ce49512f:
+    x: 3
+    y: 9
+    height: 5
+    queryString: message = *TRAFFIC* | worldMap(ip=destination_ip)
+    visualization: world-map
+    end: now
+    start: 7d
+    width: 9
+    title: Outbound Traffic Monitoring
+    isLive: false
+    type: query
+  9c646470-f730-40e9-b28b-425c33b69082:
+    x: 0
+    y: 14
+    height: 4
+    queryString: '#type=csv and bytesin > 100000 | timechart(span=1hour, function=sum(bytesin))'
+    end: now
+    start: 7d
+    width: 12
+    options:
+      connect-points: false
+      imputation: none
+      plotType: line
+    visualization: time-chart
+    title: Network Download Usage - FW
+    isLive: false
+    type: query
+  c40d97b3-0a46-41d4-bce5-60a84bf31f2a:
+    x: 0
+    y: 4
+    height: 5
+    queryString: '#type = winevent and EventID = 4625 | groupBy(field=[SourceUserName,
+      FailureReason], function=count()) | sort(order=asc)'
+    visualization: table-view
+    end: now
+    start: 1y
+    width: 5
+    title: Suspicious Logon Attempts - Status Code
+    isLive: false
+    type: query
+  a0eecc0c-cac1-4548-9241-3560fbee0f3e:
+    x: 0
+    y: 9
+    height: 5
+    queryString: cef.ext.fname = *.zip or cef.ext.fname = *.tar* or cef.ext.fname
+      = *.txt | groupBy(field=cef.ext.fname, function=count()) | sort()
+    visualization: table-view
+    end: now
+    start: 1y
+    width: 3
+    title: Attachments
+    isLive: false
+    type: query
+  0ad7d80d-6010-40dc-861e-ff7cc4dba583:
+    x: 4
+    y: 0
+    height: 4
+    queryString: |-
+      #type=csv and message = *TRAFFIC* | dayOfWeekName := time:dayOfWeekName()
+      | dayOfWeek := time:dayOfWeek() | hour := time:hour()
+      | groupBy([dayOfWeekName, dayOfWeek, hour])
+      | sort([dayOfWeek, packets_out], type=[number, number], order=[asc, desc], limit=200)
+      | drop(dayOfWeek)
+    visualization: heat-map
+    end: now
+    start: 1y
+    width: 4
+    title: Network Packets Egress
+    isLive: false
+    type: query
+  b1747cbf-a62a-4ef2-869d-becc8e03dd60:
+    x: 0
+    y: 0
+    height: 4
+    queryString: cef.ext.act = * | groupby(field=cef.ext.act)
+    visualization: pie-chart
+    end: now
+    start: 1y
+    width: 4
+    title: Email Delivery Status
+    isLive: false
+    type: query
+  2ffbe4e6-329f-4427-91c8-1e1b046a1cd7:
+    x: 9
+    y: 4
+    height: 5
+    queryString: '#type = winevent and ( EventID = 4624 or eventid = 4624)  | groupby(field=[SourceUserName,SourceProcessName],
+      function=count()) | sort(order=asc)'
+    visualization: table-view
+    end: now
+    start: 1y
+    width: 3
+    title: Suspicious Process - Authentication
+    isLive: false
+    type: query
+  42de8114-2e4c-4217-83af-0578be632f9d:
+    x: 8
+    y: 0
+    height: 4
+    queryString: '#type=csv and dst_port < 1024  | groupby(field=dst_port, function=count())
+      | sort()'
+    visualization: table-view
+    end: now
+    start: 1y
+    width: 2
+    title: Top Ports Used - FW
+    isLive: false
+    type: query
+  1d5f2361-24c0-40d6-94ad-b881a98e4427:
+    x: 5
+    y: 4
+    height: 5
+    queryString: '#type = winevent and EventID = 4688 and CreatorProcess = * | groupBy(field=[DestinationProcessName,
+      CreatorProcess], function=count()) | sort(order=asc, limit=20)'
+    visualization: table-view
+    end: now
+    start: 1y
+    width: 4
+    title: Suspicious Process Activities
+    isLive: false
+    type: query
+  abce83e6-2efa-4e05-abeb-c3b5a0c324ee:
+    x: 10
+    y: 0
+    height: 4
+    queryString: '#type=csv and application = *  | groupby(field=application, function=count())
+      | sort()'
+    visualization: table-view
+    end: now
+    start: 1y
+    width: 2
+    title: Top Apps Used - FW
+    isLive: false
+    type: query
+$schema: https://schemas.humio.com/dashboard/v0.12.0
