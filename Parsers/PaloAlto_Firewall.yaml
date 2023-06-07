@@ -1,0 +1,27 @@
+name: PaloAlto_Firewall
+tests:
+- Jan 2 18:30:00 IDCIF01.corp.dynatrace.com 1,2023/05/02 18:30:00,7801003310,TRAFFIC,end,2049,2023/05/02
+  18:30:00,10.0.3.22,54.78.33.11,10.0.1.2,54.78.33.11,Allow Public Partner FTP Access,snx\ftpuser1,,filezilla,vsys3,DMZ-VIP,DMZ-WEB,ethernet1/7,ethernet1/6,PAN_FW_Log_Forwarding,2023/05/02
+  18:30:00,193084,1,13323,21,28103,21,0x1b,tcp,allow,180,1262,10043,34,2023/05/04
+  18:29:43,15,storage,0,33483929124,0x8000000000000000,10.0.0.0-10.255.255.255.255,CN,0,2,2,tcp-rst-from-server,16,0,0,0,DEV,IDCIF01,from-policy,,,0,,0,,N/A,0,0,0,0
+- Mar 10 12:44:11 IDCIF01.corp.dynatrace.com 1,2023/05/10 12:44:23,7801003310,THREAT,vulnerability,2049,2023/05/10
+  12:44:23,172.16.8.199,24.84.17.146,172.16.8.199,24.84.17.146,General Web Infrastructure,demerson,duc,web-browsing,vsys1,z2-FW-Sumo-Internal,inside,ethernet1/2,ethernet1/2,LOGreset-both,2023/05/10
+  12:44:11,320228,1,21345,443,0,0,0x2000,tcp,alert,"linkedin.com/submit-your-resignation-smarter-way-to-exit-your-job",635242,56464,Suspicious
+  Abnormal HTTP Response Found(40397),,,Job Search,informational,server-to-client,1077387368,0x8000000000000000,India,10.0.0.0-10.255.255.255,0,,0,,,1,,,,,,,,0,31,43,0,0,,us3,,,,,0,,0,,N/A,protocol-anomaly,AppThreat-52239-48642,0x0
+fieldsToBeRemovedBeforeParsing: []
+$schema: https://schemas.humio.com/parser/v0.2.0
+script: |-
+  case { /^\S+\s+\d+\s+\S+\s+\S+\s+(?<pld_str>.*\,TRAFFIC\,.*)/ |
+
+  parseCsv(pld_str, columns=[id, ReceivedTime, SerialNumber, EventType, SubType, cs1, EventTime, SourceIP, DestinationIP, NATSourceIP, NATDestinationIP, RuleName, SourceUserName, DestinationUserName, Application, VirtualSystem, SourceZone, DestinationZone, InboundInterface, OutboundInterface, ForwardProfile, timestamp_1, SessionID, RepeatCount, SourcePort, DestinationPort, NATSourcePort, NATDestinationPort, Flags, TransportProtocol, DeviceAction, TotalBytes, BytesIn, BytesOut, TotalPackets, StartTime, ElapsedTime, WebsiteCategory, cn1, SequenceNumber, ActionFlags, SourceCountry, DestinationCountry, cn2, PacketsSent, PacketsReceived, SessionEndReason]) | findTimestamp(field=EventTime, timezone="Asia/Singapore")
+
+  | drop([pld_str]);
+
+  /^\S+\s+\d+\s+\S+\s+\S+\s+(?<pld_str>.*\,THREAT\,.*)/ |
+
+  parseCsv(pld_str, columns=[id, ReceivedTime, SerialNumber, EventType, SubType, cs1, EventTime, SourceIP, DestinationIP, NATSourceIP, NATDestinationIP, RuleName, SourceUserName, DestinationUserName, Application, VirtualSystem, SourceZone, DestinationZone, InboundInterface, OutboundInterface, ForwardProfile, timestamp_1, SessionID, RepeatCount, SourcePort, DestinationPort, NATSourcePort, NATDestinationPort, Flags, TransportProtocol, DeviceAction, RequestURL, ThreatID, TotalBytes,ThreatName, cs2, cs3, WebsiteCategory, Severity, DeviceDirection, SequenceNumber, ActionFlags, SourceLocation, DestinationLocation, cs4, ContentType, PCAP_ID, FileDigest, Cloud, URLIndex, UserAgent, FileType, X_Forwarded_For, Referer, Sender, Subject, Recipient, ReportID, Device_Group_Hierarchy_Level_1, Device_Group_Hierarchy_Level_2, Device_Group_Hierarchy_Level_3, Device_Group_Hierarchy_Level_4, VirtualSystemName, FWDeviceName, cs5, SourceVM_UUID, DestinationVM_UUID, HTTPMethod, TunnelID, Monitor_Tag, ParentSessionID,cs6, cs7, URLCategoryList, ThreatCategory]) | findTimestamp(field=EventTime, timezone="Asia/Singapore")
+
+  | drop([pld_str]);
+
+  }
+tagFields: []
