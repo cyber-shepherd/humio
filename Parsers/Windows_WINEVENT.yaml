@@ -1,0 +1,168 @@
+name: winevent
+tests:
+- 'Jun 04 11:22:51 WW-sb1186.humio.com MSWinEventLog 2 Security 56114192 Jun 04 11:22:51
+  2023 4688 Microsoft-Windows-Security-Auditing N/A N/A Success Audit WW-sb1186 Process
+  Creation A new process has been created. Subject: Security ID: S-1-5-21-643378232-398343129-2533877718-500
+  Account Name: DT47922 Account Domain: DT-ENTERPRISE Logon ID: 0x27a8b27 Process
+  Information: New Process ID: 0xa7c New Process Name: C:\\Users\\Administrator\\AppData\\Roaming\\Wcncsvc.bin
+  Token Elevation Type: TokenElevationTypeDefault (1) Creator Process ID: 0x86c Process
+  Command Line: Token Elevation Type indicates the type of token that was assigned
+  to the new process in accordance with User Account Control policy. Type 1 is a full
+  token with no privileges removed or groups disabled. A full token is only used if
+  User Account Control is disabled or if the user is the built-in Administrator account
+  or a service account. Type 2 is an elevated token with no privileges removed or
+  groups disabled. An elevated token is used when User Account Control is enabled
+  and the user chooses to start the program using Run as administrator. An elevated
+  token is also used when an application is configured to always require administrative
+  privilege or to always require maximum privilege, and the user is a member of the
+  Administrators group. Type 3 is a limited token with administrative privileges removed
+  and administrative groups disabled. The limited token is used when User Account
+  Control is enabled, the application does not require administrative privilege, and
+  the user does not choose to start the program using Run as administrator.'
+- 'Jun 04 09:29:21 WW-sb0086.humio.com MSWinEventLog 2 Security 56114192 Jun 04 09:29:21
+  2023 4688 Microsoft-Windows-Security-Auditing N/A N/A Success Audit WW-sb0086.humio.com.local
+  Process Creation A new process has been created. Subject: Security ID: S-1-5-21-643378232-398343129-2533877718-500
+  Account Name: BH1049 Account Domain: SECLAB Logon ID: 0x27a8b27 Process Information:
+  New Process ID: 0xa7c New Process Name: C:\\Users\\Administrator\\AppData\\Roaming\\Wcncsvc.bin
+  Token Elevation Type: TokenElevationTypeDefault (1) Creator Process ID: 0x86c Process
+  Command Line: Token Elevation Type indicates the type of token that was assigned
+  to the new process in accordance with User Account Control policy. Type 1 is a full
+  token with no privileges removed or groups disabled. A full token is only used if
+  User Account Control is disabled or if the user is the built-in Administrator account
+  or a service account. Type 2 is an elevated token with no privileges removed or
+  groups disabled. An elevated token is used when User Account Control is enabled
+  and the user chooses to start the program using Run as administrator. An elevated
+  token is also used when an application is configured to always require administrative
+  privilege or to always require maximum privilege, and the user is a member of the
+  Administrators group. Type 3 is a limited token with administrative privileges removed
+  and administrative groups disabled. The limited token is used when User Account
+  Control is enabled, the application does not require administrative privilege, and
+  the user does not choose to start the program using Run as administrator.'
+- 'Jun 01 01:49:07 PC1016AUST MSWinEventLog 1 Security 1035 Jun 01 01:48:56 2020 1102
+  Microsoft-Windows-Security-Auditing N/A N/A Success Audit PC1016AUST Audit log The
+  audit log was cleared. Subject: Security ID: PC1016AUST\dg47rndv3y Account Name:
+  dg47rndv3y Domain Name: PC1016AUST Logon ID: 0x169e9'
+- "Apr 13 02:57:22 TPAPRCDCC01.clt.lash.loc MSWinEventLog\t1\tSecurity\t1301121799\t\
+  Fri Apr 13 02:57:22 2018\t4663\tMicrosoft-Windows-Security-Auditing\tN/A\tN/A\t\
+  Success Audit\tTPAPRCDCC01.clt.lash.loc\tFile System\t\tAn attempt was made to access\
+  \ an object.    Subject:   Security ID:  S-1-5-18   Account Name:  TPAPRCDCC01$\
+  \   Account Domain:  CLT_LASH   Logon ID:  0x3e7    Object:   Object Server: Security\
+  \   Object Type: File   Object Name: C:\\Windows\\System32\\wbem\\WmiPrvSE.exe \
+  \  Handle ID: 0x8c4    Process Information:   Process ID: 0xaf8   Process Name:\
+  \ C:\\Program Files\\Common Files\\McAfee\\SystemCore\\mcshield.exe    Access Request\
+  \ Information:   Accesses: WriteAttributes         Access Mask: 0x100\t366733515"
+- "Apr 13 02:57:23 DC002-1ADC.abc.amerisourcebergen.com MSWinEventLog\t1\tSecurity\t\
+  1301124738\tFri Apr 13 02:57:23 2018\t4648\tMicrosoft-Windows-Security-Auditing\t\
+  N/A\tN/A\tSuccess Audit\tDC002-1ADC.abc.amerisourcebergen.com\tLogon\t\tA logon\
+  \ was attempted using explicit credentials.    Subject:   Security ID:  S-1-5-18\
+  \   Account Name:  DC002-1ADC$   Account Domain:  ABC   Logon ID:  0x3E7   Logon\
+  \ GUID:  {00000000-0000-0000-0000-000000000000}    Account Whose Credentials Were\
+  \ Used:   Account Name:  prd_isilon_abc_bnd   Account Domain:  ABC   Logon GUID:\
+  \  {00000000-0000-0000-0000-000000000000}    Target Server:   Target Server Name:\
+  \ localhost   Additional Information: localhost    Process Information:   Process\
+  \ ID:  0x1ec   Process Name:  C:\\Windows\\System32\\lsass.exe    Network Information:\
+  \   Network Address: 10.251.10.10   Port:   51606    This event is generated when\
+  \ a process attempts to log on an account by explicitly specifying that account’\
+  s credentials.  This most commonly occurs in batch-type configurations such as scheduled\
+  \ tasks, or when using the RUNAS command.\t239479600"
+- 'Aug 19 09:29:21 WW-sb0086.securonix.com MSWinEventLog 2 Security 56114192 Aug 19
+  09:29:21 2020 4688 Microsoft-Windows-Security-Auditing N/A N/A Success Audit WW-sb0086.securonix.com.local
+  Process Creation A new process has been created. Subject: Security ID: S-1-5-21-643378232-398343129-2533877718-500
+  Account Name: BH1049 Account Domain: SECLAB Logon ID: 0x27a8b27 Process Information:
+  New Process ID: 0xa7c New Process Name: C:\\Users\\Administrator\\AppData\\Roaming\\Wcncsvc:bin
+  Token Elevation Type: TokenElevationTypeDefault (1) Creator Process ID: 0x86c Process
+  Command Line: Token Elevation Type indicates the type of token that was assigned
+  to the new process in accordance with User Account Control policy. Type 1 is a full
+  token with no privileges removed or groups disabled. A full token is only used if
+  User Account Control is disabled or if the user is the built-in Administrator account
+  or a service account. Type 2 is an elevated token with no privileges removed or
+  groups disabled. An elevated token is used when User Account Control is enabled
+  and the user chooses to start the program using Run as administrator. An elevated
+  token is also used when an application is configured to always require administrative
+  privilege or to always require maximum privilege, and the user is a member of the
+  Administrators group. Type 3 is a limited token with administrative privileges removed
+  and administrative groups disabled. The limited token is used when User Account
+  Control is enabled, the application does not require administrative privilege, and
+  the user does not choose to start the program using Run as administrator.'
+- 'Feb 25 13:02:50 bhvwp-nxlog01 MSWinEventLog     1       Security        1030    Tue
+  Feb 25 13:02:50 2020        4624    Microsoft-Windows-Security-Auditing N/A      N/A     Success
+  Audit   bhvwp-nxlog01   Logon           An account was successfully logged on.    Subject:   Security
+  ID:  S-1-0-0   Account Name:  -   Account Domain:  -   Logon ID:  0x0    Logon Type:   3    Impersonation
+  Level:  Impersonation    New Logon:   Security ID:  S-1-5-21-1663393429-1706624548-619646970-54933   Account
+  Name:  svc_solarwinds   Account Domain:  BH-ENTERPRISE   Logon ID:  0x11F2F17C   Logon
+  GUID:  {98B16B42-B3D1-BD23-DC87-6BE8F4185E0B}    Process Information:   Process
+  ID:  0x0   Process Name:  -    Network Information:   Workstation Name: -   Source
+  Network Address: 10.10.120.77   Source Port:  50659    Detailed Authentication Information:   Logon
+  Process:  Kerberos   Authentication Package: Kerberos   Transited Services: -   Package
+  Name (NTLM only): -   Key Length:  0    This event is generated when a logon session
+  is created. It is generated on the computer that was accessed.    The subject fields
+  indicate the account on the local system which requested the logon. This is most
+  commonly a service such as the Server service, or a local process such as Winlogon.exe
+  or Services.exe.    The logon type field indicates the kind of logon that occurred.
+  The most common types are 2 (interactive) and 3 (network).    The New Logon fields
+  indicate the account for whom the new logon was created, i.e. the account that was
+  logged on.    The network fields indicate where a remote logon request originated.
+  Workstation name is not always available and may be left blank in some cases.    The
+  impersonation level field indicates the extent to which a process in the logon session
+  can impersonate.    The authentication information fields provide detailed information
+  about this specific logon request.   - Logon GUID is a unique identifier that can
+  be used to correlate this event with a KDC event.   - Transited services indicate
+  which intermediate services have participated in this logon request.   - Package
+  name indicates which sub-protocol was used among the NTLM protocols.   - Key length
+  indicates the length of the generated session key. This will be 0 if no session
+  key was requested. 34798564'
+- 'May 8 13:45:24 IN-GOLADPWV999 MSWinEventLog 3 Security 115612189 Fri May 08 13:45:24
+  2020 4625 Microsoft-Windows-Security-Auditing N/A N/A Failure Audit IN-GOLADPWV999
+  Logon An account failed to log on. Subject: Security ID: S-1-0-0 Account Name: -
+  Account Domain: - Logon ID: 0x0 Logon Type: 3 Account For Which Logon Failed: Security
+  ID: S-1-0-0 Account Name: pgreen1@securonix.com$ Account Domain: IN-GOLADPWV999
+  Failure Information: Failure Reason: Unknown user name or bad password. Status:
+  0xC000006D Sub Status: 0xC0000064 Process Information: Caller Process ID: 0x0 Caller
+  Process Name: - Network Information: Workstation Name: IN-KOLUSWPV07 Source Network
+  Address: 172.22.2.151 Source Port: 56314 Detailed Authentication Information: Logon
+  Process: NtLmSsp Authentication Package: NTLM Transited Services: - Package Name
+  (NTLM only): - Key Length: 0 This event is generated when a logon request fails.
+  It is generated on the computer where access was attempted. The Subject fields indicate
+  the account on the local system which requested the logon. This is most commonly
+  a service such as the Server service, or a local process such as Winlogon.exe or
+  Services.exe. The Logon Type field indicates the kind of logon that was requested.
+  The most common types are 2 (interactive) and 3 (network). The Process Information
+  fields indicate which account and process on the system requested the logon. The
+  Network Information fields indicate where a remote logon request originated. Workstation
+  name is not always available and may be left blank in some cases. The authentication
+  information fields provide detailed information about this specific logon request.
+  - Transited services indicate which intermediate services have participated in this
+  logon request. - Package name indicates which sub-protocol was used among the NTLM
+  protocols. - Key length indicates the length of the generated session key. This
+  will be 0 if no session key was requested. 1261400171'
+- "Apr 13 02:57:23 DC002-1ADC.abc.amerisourcebergen.com MSWinEventLog\t1\tSecurity\t\
+  1301124738\tFri Apr 13 02:57:23 2018\t4648\tMicrosoft-Windows-Security-Auditing\t\
+  N/A\tN/A\tSuccess Audit\tDC002-1ADC.abc.amerisourcebergen.com\tLogon\t\tA logon\
+  \ was attempted using explicit credentials.    Subject:   Security ID:  S-1-5-18\
+  \   Account Name:  DC002-1ADC$   Account Domain:  ABC   Logon ID:  0x3E7   Logon\
+  \ GUID:  {00000000-0000-0000-0000-000000000000}    Account Whose Credentials Were\
+  \ Used:   Account Name:  prd_isilon_abc_bnd   Account Domain:  ABC   Logon GUID:\
+  \  {00000000-0000-0000-0000-000000000000}    Target Server:   Target Server Name:\
+  \ localhost   Additional Information: localhost    Process Information:   Process\
+  \ ID:  0x1ec   Process Name:  C:\\Windows\\System32\\lsass.exe    Network Information:\
+  \   Network Address: 10.251.10.10   Port:   51606    This event is generated when\
+  \ a process attempts to log on an account by explicitly specifying that account’\
+  s credentials.  This most commonly occurs in batch-type configurations such as scheduled\
+  \ tasks, or when using the RUNAS command.\t239479600"
+fieldsToBeRemovedBeforeParsing: []
+$schema: https://schemas.humio.com/parser/v0.2.0
+script: |-
+  case { /^(\S+\s+\d+\s+\S+)\s+(\S+)\s+MSWinEventLog\s+\d+\s+\S+\s+\d+\s+(?<eventtime>\S+\s*\S+\s+\d+\s+\S+\s+\d+)\s+(?<EventID>4624)\s+(?<EventCategory>\S+)\s+(\S+)\s+(\S+)\s+(?<EventOutcome>\S+\s+Audit)\s+(?<DeviceHostname>\S+)\s+(?<EventType>\S+)\s+(?<Description>[^\.]+\.)\s+Subject\:\s+Security\s+ID\:\s+(?<SubjectSecurityID>\S*)\s+Account\s+Name\:\s+(?<SubjectAccountName>\S*)\s+Account\s+Domain\:\s+(?<SubjectAccountDomain>\S*)\s+Logon\s+ID\:\s+(?<SubjectLogonID>\S*)\s+Logon\s+Type\:\s+(?<LogonType>\d*)\s+Impersonation\s+Level\:\s+(?<ImpersonationLevel>\S*)\s+New\s+Logon\:\s+(?<NewLogon>\S*)\s+Security\s+ID\:\s+(?<LogonSecurityID>\S*)\s+Account\s+Name\:\s+(?<SourceUserName>\S*)\s+Account\s+Domain\:\s+(?<SourceUserDomain>\S*)\s+Logon\s+ID\:\s+(?<SourceUserLogonID>\S*)\s+Logon\s+GUID\:\s+(?<LogonGUID>\S*)\s+Process\s+Information\:\s+Process\s+ID\:\s+(?<SourceProcessID>\S*)\s+Process\s+Name\:\s+(?<SourceProcessName>\S*)\s+Network\s+Information\:\s+(\S*)\s+Workstation\s+Name\:\s+(?<SourceHostName>\S*)\s+Source\s+Network\s+Address\:\s+(?<SourceIP>\S*)\s+Source\s+Port\:\s+(?<SourcePort>\S*)\s+Detailed\s+Authentication\s+Information\:\s+(\S*)\s+Logon\s+Process\:\s+(?<LogonProcess>\S*)\s+Authentication\s+Package\:\s+(?<AuthPackage>\S*)\s+Transited\s+Services\:\s+(?<TransitedServices>\S*)\s+Package\s+Name\s+\(NTLM\s+only\)\:\s+(?<PackageName>\S*)\s+Key\s+Length\:\s+(?<KeyLength>\d*)\s+.*/ | findTimestamp(field="eventtime", timezone="Asia/Singapore");
+
+  /^(\S+\s+\d+\s+\S+)\s+(\S+)\s+MSWinEventLog\s+\d+\s+\S+\s+\d+\s+(?<eventtime>\S+\s*\S+\s+\d+\s+\S+\s+\d+)\s+(?<EventID>4625)\s+(?<EventCategory>\S+)\s+(\S+)\s+(\S+)\s+(?<EventOutcome>\S+\s+Audit)\s+(?<DeviceHostname>\S+)\s+(?<EventType>\S+)\s+(?<Description>[^\.]+\.)\s+Subject\:\s+Security\s+ID\:\s+(?<SubjectSecurityID>\S*)\s+Account\s+Name\:\s+(?<SubjectAccountName>\S*)\s+Account\s+Domain\:\s+(?<SubjectAccountDomain>\S*)\s+Logon\s+ID\:\s+(?<SubjectLogonID>\S*)\s+Logon\s+Type\:\s+(?<LogonType>\d+)\s+Account\s+For\s+Which\s+Logon\s+Failed\:\s+Security\s+ID\:\s+(\S+)\s+Account\s+Name\:\s+(?<SourceUserName>\S+)\s+Account\s+Domain\:\s+(?<SourceUserDomain>\S+)\s+Failure\s+Information\:\s+Failure\s+Reason\:\s+(?<FailureReason>[^\.]+\.)\s+Status\:\s+(?<Status>\S+)\s+Sub\s+Status\:\s+(?<SubStatus>\S+)\s+Process\s+Information\:\s+Caller\s+Process\s+ID\:\s+(?<SourceProcessID>\S+)\s+Caller\s+Process\s+Name\:\s+(?<SourceProcessName>\S+)\s+Network\s+Information\:\s+Workstation\s+Name\:\s+(?<SourceHostName>\S+)\s+Source\s+Network\s+Address\:\s+(?<SourceIP>\S+)\s+Source\s+Port\:\s+(?<SourcePort>\S+)\s+Detailed\s+Authentication\s+Information\:\s+Logon\s+Process\:\s+(?<DestinationProcessName>\S+)\s+Authentication\s+Package\:\s+(?<AuthPackage>\S+)\s+Transited\s+Services\:\s+(?<TransitedService>\S+)\s+Package\s+Name\s+\(NTLM\s+only\)\:\s+(?<PackageName>\S*)\s+Key\s+Length\:\s+(?<KeyLength>\d*)\s+.*/ | findTimestamp(field="eventtime", timezone="Asia/Singapore");
+
+  /^(\S+\s+\d+\s+\S+)\s+(\S+)\s+MSWinEventLog\s+\d+\s+\S+\s+\d+\s+(?<eventtime>\S+\s*\S+\s+\d+\s+\S+\s+\d+)\s+(?<EventID>4648)\s+(?<EventCategory>\S+)\s+(\S+)\s+(\S+)\s+(?<EventOutcome>\S+\s+Audit)\s+(?<DeviceHostname>\S+)\s+(?<EventType>\S+)\s+(?<Description>[^\.]+\.)\s+Subject\:\s+Security\s+ID\:\s+(?<SubjectSecurityID>\S*)\s+Account\s+Name\:\s+(?<SourceUserName>\S*)\s+Account\s+Domain\:\s+(?<SourceUserDomain>\S*)\s+Logon\s+ID\:\s+(?<SubjectLogonID>\S*)\s+Logon\s+GUID\:\s+(?<SourceUserGUID>\S+)\s+Account\s+Whose\s+Credentials\s+Were\s+Used\:\s+Account\s+Name\:\s+(?<DestinationUserName>\S+)\s+Account\s+Domain\:\s+(?<DestinationUserDomain>\S+)\s+Logon\s+GUID\:\s+(?<DestinationUserGUID>\S+)\s+Target\s+Server\:\s+Target\s+Server\s+Name\:\s+(?<DestinationHostName>\S+)\s+Additional\s+Information\:\s+(\S+)\s+Process\s+Information\:\s+Process\s+ID\:\s+(?<SourceProcessID>\S+)\s+Process\s+Name\:\s+(?<SourceProcessName>\S+)\s+Network\s+Information\:\s+Network\s+Address\:\s+(?<SourceIP>\S+)\s+Port\:\s+(?<SourcePort>\d+)\s+.*/ | findTimestamp(field="eventtime", timezone="Asia/Singapore");
+
+  /^(\S+\s+\d+\s+\S+)\s+(?<DeviceHostname>\S+)\s+MSWinEventLog\s+\d+\s+\S+\s+\d+\s+(?<eventtime>\S*\s*\S+\s+\d+\s+\S+\s+\d+)\s+(?<EventID>4688)\s+(?<EventCategory>\S+)\s+(\S+)\s+(\S+)\s+(?<EventOutcome>\S+\s+Audit)\s+(?<SourceHostName>\S+)\s+(?<EventType>Process\s+Creation|Process\s+Tracking)\s+(?<Description>[^\.]+\.)\s+Subject\:\s+Security\s+ID\:\s+(?<SubjectSecurityID>\S*)\s+Account\s+Name\:\s+(?<SourceUserName>\S*)\s+Account\s+Domain\:\s+(?<SourceUserDomain>\S*)\s+Logon\s+ID\:\s+(?<SourceUserLogonID>\S*)\s+Process\s+Information\:\s+New\s+Process\s+ID\:\s+(?<DestinationProcessID>\S*)\s+New\s+Process\s+Name\:\s+(?<DestinationProcessName>(?<DestinationProcessPath>\S+)\\(?<FileName>\S+))\s+Token\s+Elevation\s+Type\:\s+(?<TokenElevationType>[\S\s\W]+)\s+Creator\s+Process\s+ID\:\s+(?<SourceProcessID>\S+)\s+(?:Creator\s+Process\s+Name\:\s+(?:(?<SourceProcessName>(?<SourceProcessPath>\S+)\\(?<CreatorProcess>\S+))\s+|)|)Process\s+Command\s+Line\:\s*(?<CommandLine>\S*)\s*Token\s+.*/ | findTimestamp(field="eventtime", timezone="Asia/Singapore");
+
+  /^(\S+\s+\d+\s+\S+)\s+(\S+)\s+MSWinEventLog\s+\d+\s+\S+\s+\d+\s+(?<eventtime>\S*\s*\S+\s+\d+\s+\S+\s+\d+)\s+(?<EventID>4663)\s+(?<EventCategory>\S+)\s+(\S+)\s+(\S+)\s+(?<EventOutcome>\S+\s+Audit)\s+(?<DeviceHostname>\S+)\s+(?<EventType>Object\s+Access|File\s+System|Registry|Kernel\s+Object|SAM|Other\s+Object\s+Access\s+Events)\s+(?<Description>[^\.]+\.)\s+Subject\:\s+Security\s+ID\:\s+(?<SubjectSecurityID>\S*)\s+Account\s+Name\:\s+(?<SourceUserName>\S*)\s+Account\s+Domain\:\s+(?<SourceUserDomain>\S*)\s+Logon\s+ID\:\s+(?<SourceUserLogonID>\S*)\s+Object\:\s+Object\s+Server\:\s+(?<ObjectServer>\S+)\s+Object\s+Type\:\s+(?<ObjectType>\S+)\s+Object\s+Name\:\s+(?<ObjectName>\S+)\s+Handle\s+ID\:\s+(?<HandleID>\S+)\s+Process\s+Information\:\s+Process\s+ID\:\s+(?<SourceProcessID>\S*)\s+Process\s+Name\:\s+(?<SourceProcessName>[^\.]+\S+)\s+Access\s+Request\s+Information\:\s+Accesses\:\s+(?<Accesses>\S+)\s+Access\s+Mask\:\s+(?<AccessMask>\S+)\s+.*/ | findTimestamp(field="eventtime", timezone="Asia/Singapore");
+
+  /^(\S+\s+\d+\s+\S+)\s+(\S+)\s+MSWinEventLog\s+\d+\s+\S+\s+\d+\s+(?<eventtime>\S*\s*\S+\s+\d+\s+\S+\s+\d+)\s+(?<EventID>1102)\s+(?<EventCategory>\S+)\s+(\S+)\s+(\S+)\s+(?<EventOutcome>\S+\s+Audit)\s+(?<DeviceHostname>\S+)\s+(?<EventType>\S+)\s+(?<Description>[^\.]+\.\S*)\s+Subject\:\s+Security\s+ID\:\s+(?<SubjectSecurityID>\S*)\s+Account\s+Name\:\s+(?<SourceUserName>\S*)\s+Domain\s+Name\:\s+(?<SourceUserDomain>\S*)\s+Logon\s+ID\:\s+(?<SourceUserLogonID>\S*)/ | findTimestamp(field="eventtime", timezone="Asia/Singapore");
+
+  } | drop([eventtime])
+tagFields: []
